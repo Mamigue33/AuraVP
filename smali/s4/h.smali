@@ -1,0 +1,86 @@
+.class public final Ls4/h;
+.super Ljava/lang/Object;
+.source "r8-map-id-d015a0247e3c398121c271b33d1d5f7ea9dfc6ea3323f0c5fa1853fe5d16a740"
+
+
+# instance fields
+.field public final a:Lk5/a;
+
+
+# direct methods
+.method public constructor <init>(Lk5/a;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "app"
+
+    .line 2
+    .line 3
+    invoke-static {v0, p1}, Lob/j;->e(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object p1, p0, Ls4/h;->a:Lk5/a;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final execute()V
+    .locals 4
+    .annotation runtime Landroid/webkit/JavascriptInterface;
+    .end annotation
+
+    .line 4
+    sget-object v0, Lwb/d0;->a:Ldc/e;
+
+    .line 5
+    sget-object v0, Lbc/n;->a:Lxb/c;
+
+    .line 6
+    new-instance v1, La3/k;
+
+    const/4 v2, 0x0
+
+    const/16 v3, 0x8
+
+    invoke-direct {v1, p0, v2, v3}, La3/k;-><init>(Ljava/lang/Object;Ldb/c;I)V
+
+    invoke-static {v0, v1}, Lwb/v;->t(Ldb/h;Lnb/p;)Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public final execute(Ljava/lang/String;)V
+    .locals 4
+    .annotation runtime Landroid/webkit/JavascriptInterface;
+    .end annotation
+
+    .line 1
+    sget-object v0, Lwb/d0;->a:Ldc/e;
+
+    .line 2
+    sget-object v0, Lbc/n;->a:Lxb/c;
+
+    .line 3
+    new-instance v1, Landroidx/lifecycle/p;
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x3
+
+    invoke-direct {v1, p0, p1, v2, v3}, Landroidx/lifecycle/p;-><init>(Ljava/lang/Object;Ljava/lang/String;Ldb/c;I)V
+
+    invoke-static {v0, v1}, Lwb/v;->t(Ldb/h;Lnb/p;)Ljava/lang/Object;
+
+    return-void
+.end method

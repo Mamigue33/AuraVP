@@ -1,4 +1,4 @@
-name: Build APK
+name: Build APK with Apktool
 
 on:
   push:
@@ -11,22 +11,26 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
-    - name: Set up JDK 17
+    - name: Set up Java
       uses: actions/setup-java@v4
       with:
-        java-version: '17'
+        java-version: '11'
         distribution: 'temurin'
     
-    - name: Setup Android SDK
-      uses: android-actions/setup-android@v3
+    - name: Install Apktool
+      run: |
+        wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool
+        chmod +x apktool
+        sudo mv apktool /usr/local/bin/
+        wget https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar
+        sudo mv apktool_2.9.3.jar /usr/local/bin/apktool.jar
     
     - name: Build APK
       run: |
-        chmod +x gradlew
-        ./gradlew assembleRelease
+        apktool b -o AuraVP_modified.apk
     
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: AuraVP
-        path: app/build/outputs/apk/release/*.apk
+        path: AuraVP_modified.apk
