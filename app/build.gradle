@@ -1,0 +1,29 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.auravp.application'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.auravp.application"
+        minSdk 25
+        targetSdk 34
+        versionCode 22
+        versionName "4.5.12"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'com.google.firebase:firebase-messaging:23.1.0'
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+}
